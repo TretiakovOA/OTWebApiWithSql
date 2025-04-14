@@ -1,0 +1,6 @@
+@OTWebApiWithSql_HostAddress = http://localhost:5100
+
+GET {{OTWebApiWithSql_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
