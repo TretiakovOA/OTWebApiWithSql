@@ -1,0 +1,15 @@
+﻿CREATE TABLE Operators (
+    Id INT PRIMARY KEY IDENTITY,
+    FullName NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    Phone NVARCHAR(20) NOT NULL
+);
+
+CREATE TABLE CallAssignments (
+    CallId INT NOT NULL,
+    OperatorId INT NOT NULL,
+    AssignmentDate DATETIME NOT NULL,
+    PRIMARY KEY (CallId, OperatorId),
+    FOREIGN KEY (CallId) REFERENCES Calls(Id) ON DELETE CASCADE,
+    FOREIGN KEY (OperatorId) REFERENCES Operators(Id) ON DELETE CASCADE
+);
